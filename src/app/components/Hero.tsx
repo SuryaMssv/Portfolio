@@ -4,13 +4,13 @@ import React, { useEffect, useState } from 'react'
 import dp from "@/public/dp.jpeg"
 
 const Hero = () => {
-  const words = ["Software Developer","Frontend Developer","UI Designer"]
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
+    const words = ["Software Developer","Frontend Developer","UI Designer"]
     if (subIndex === words[index].length + 1 && !isDeleting) {
       setTimeout(() => setIsDeleting(true), 1000); // Wait before deleting
     } else if (isDeleting && subIndex === 0) {
@@ -24,7 +24,7 @@ const Hero = () => {
     }, isDeleting ? 100 : 150); // Speed of typing/deleting
 
     return () => clearTimeout(timeout);
-  }, [subIndex, index, isDeleting, words]);
+  }, [subIndex, index, isDeleting]);
   
   return (
     <div className='flex justify-between h-fit p-[10rem]'>

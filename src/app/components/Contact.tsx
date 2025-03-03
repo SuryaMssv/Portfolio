@@ -8,9 +8,7 @@ import { Slide, toast } from 'react-toastify'
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sendEmail = (e:any) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const SERVICE_ID = process.env.SERVICE_ID
     const TEMPLATE_ID = process.env.TEMPLATE_ID
@@ -64,7 +62,7 @@ const Contact = () => {
           <CVbutton/>
           </div>
         <div className='w-[50%]'>
-        <form ref={form} onSubmit={sendEmail}
+        <form ref={form} onSubmit={(e)=>{sendEmail(e)}}
         className="flex flex-col gap-4 max-w-md mx-auto p-6 border border-[rgba(170,125,252,0.5)] rounded-lg shadow-sm">
           <h1 className='text-xl text-[#AA7DFC] flex gap-3 font-bold'>Get In Touch<Mail01Icon/> </h1>
           <label htmlFor="name" className="text-sm text-[#AA7DFC] font-medium">Name</label>
