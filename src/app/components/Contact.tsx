@@ -58,7 +58,7 @@ const Contact = () => {
       <div className='flex w-full p-[2rem] h-fit'>
         <div className='w-[50%] gap-5 flex flex-row justify-start items-start p-8'>
           <a className='text-[#AA7DFC] rounded-full hover:text-[#ba98f9] hover:shadow-xl hover:shadow-[rgba(170,125,252,0.3)]' href="https://github.com/SuryaMssv"><Github01Icon size={40}/></a>
-          <a href="" className='text-[#AA7DFC] rounded-full hover:text-[#ba98f9] hover:shadow-xl hover:shadow-[rgba(170,125,252,0.3)]'><Linkedin01Icon size={40}/></a>
+          <a href="https://www.linkedin.com/in/sai-surya-6084a0244/" className='text-[#AA7DFC] rounded-full hover:text-[#ba98f9] hover:shadow-xl hover:shadow-[rgba(170,125,252,0.3)]'><Linkedin01Icon size={40}/></a>
           <CVbutton/>
           </div>
         <div className='w-[50%]'>
