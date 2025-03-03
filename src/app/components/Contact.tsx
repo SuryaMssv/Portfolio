@@ -12,10 +12,13 @@ const Contact = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sendEmail = (e:any) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm('service_lgta0xl', 'template_l497njs', form.current||"", {
-        publicKey: '0v5z95C3l3hlfFOmi',
+    const SERVICE_ID = process.env.SERVICE_ID
+    const TEMPLATE_ID = process.env.TEMPLATE_ID
+    const PUBLIC_KEY = process.env.PUBLIC_KEY
+    if (SERVICE_ID&&TEMPLATE_ID&&PUBLIC_KEY){
+      emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current||"", {
+        publicKey: PUBLIC_KEY,
       })
       .then(
         (res) => {
@@ -48,6 +51,7 @@ const Contact = () => {
           });
         },
       );
+    }
   };
 
   return (

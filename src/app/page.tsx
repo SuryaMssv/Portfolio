@@ -1,4 +1,4 @@
-import { Bounce, Slide, ToastContainer } from "react-toastify";
+import { Slide, ToastContainer } from "react-toastify";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Project from "./components/Project";
